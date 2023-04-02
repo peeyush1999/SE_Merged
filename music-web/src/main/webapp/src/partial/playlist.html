@@ -1,0 +1,118 @@
+<div class="panel panel-default" ng-show="playlist">
+  <div class="panel-body">
+    <div class="page-header">
+      <h1 class="playListName">{{ playlist.name }}</h1> <button id="{{ playlist.name }}" class="editButton">Edit Playlist </button>
+    </div>
+
+    <div class="btn-toolbar" role="toolbar">
+      <button class="btn btn-link" ng-click="playAllTracks()"><span class="glyphicon glyphicon-play"></span> Play all</button>
+      <button class="btn btn-link" ng-click="shuffleAllTracks()"><span class="glyphicon glyphicon-random"></span> Shuffle</button>
+      <button class="btn btn-link" ng-click="addAllTracks()"><span class="glyphicon glyphicon-plus"></span> Add all</button>
+      <button class="btn btn-link" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+      <button class="btn btn-link" ng-click="recommend(playlist.id)"><span class="glyphicon glyphicon-music"></span> Get Spotify Recommendations</button>
+    </div>
+    <div ng-repeat="song in tracks">
+      <!-- <p>{{track}}</p> -->
+      <h4>{{song.track}}</h4>
+      
+    </div>
+    <button class="btn btn-link" ng-click="recommendlastfm(playlist.id)"><span class="glyphicon glyphicon-music"></span> Get
+      LastFm Recommendations</button>
+    
+    <div ng-repeat="fmsong in fmtracks">
+      <!-- <p>{{track}}</p> -->
+      <h4>{{fmsong.track}}</h4>
+    
+    </div>
+    <table class="table table-striped table-playing-tracks">
+      <thead>
+      <tr>
+        <th style="width: 8%;" class="col-md-1"></th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th style="width: 8%"><span class="glyphicon glyphicon-time"></span></th>
+        <th style="width: 4%"></th>
+        <th style="width: 4%"></th>
+      </tr>
+      </thead>
+      <tbody ui-sortable="trackSortableOptions">
+      <tr bindonce ng-repeat="track in playlist.tracks" bo-attr bo-attr-data-order="track.order">
+        <td>
+          <span class="handle btn-handle"></span>
+          <span class="play glyphicon glyphicon-play btn-pointer" ng-click="playTrack(track)"></span>
+          <span class="add glyphicon glyphicon-plus btn-pointer" ng-click="addTrack(track)"></span>
+        </td>
+        <td bo-title="track.title" bo-text="track.title"></td>
+        <td bo-title="track.artist.name"><a bo-href="'#/artist/' + track.artist.id" bo-text="track.artist.name"></a></td>
+        <td bo-title="track.album.name"><a bo-href="'#/album/' + track.album.id" bo-text="track.album.name"></a></td>
+        <td title="Played {{ track.play_count }} times">{{ track.length | duration }}</td>
+        <td>
+          <span class="glyphicon btn-pointer btn-like" title="{{ track.liked ? 'Loved' : '' }}" ng-click="toggleLikeTrack(track)"
+            ng-class="{ 'glyphicon-heart': track.liked, 'glyphicon-heart-empty': !track.liked }"></span>
+        </td>
+        <td><span class="remove glyphicon glyphicon-minus btn-pointer" ng-click="removeTrack($index)"></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="big-loader-container row" ng-show="!playlist">
+  <div class="big-loader">
+  </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal1">
+
+  <!-- Modal content -->
+  <div class="modal-content1">
+    <span class="close1">&times;</span>
+    <p>{{ playlist.name }}</p>
+
+    <form class="w3-container">
+      <div class="w3-section">
+        <input class="w3-input w3-border w3-margin-bottom" type="text" name="playList" value = "{{ playlist.name }}" hidden required> <br><br>
+        <label><b>Visibility</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" name="visibility"> <br><br>
+        <label><b>Coordinator</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="coordinator" name="coordinator"><br><br>
+        <button class="w3-button w3-block w3-green w3-section w3-padding" onclick="addCoordinator(this.form);" type="submit">Add </button>
+        <button class="w3-button w3-block w3-green w3-section w3-padding" onclick="removeCoordinator(this.form);" type="submit">Remove </button>
+    
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("{{ playlist.name }}");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close1")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
