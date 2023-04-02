@@ -1,4 +1,5 @@
 com/sismics/util/DateUtil.class
+com/sismics/music/core/service/spotify/SpotifySongSearch.class
 com/sismics/music/core/model/dbi/Transcoder.class
 com/sismics/music/core/dao/dbi/criteria/UserCriteria.class
 com/sismics/music/core/dao/dbi/PlaylistDao.class
@@ -38,6 +39,7 @@ com/sismics/music/core/dao/dbi/UserDao.class
 com/sismics/music/core/model/dbi/Player.class
 com/sismics/music/core/util/dbi/ColumnIndexMapper.class
 com/sismics/music/core/dao/dbi/mapper/UserDtoMapper.class
+com/sismics/music/core/service/lastfm/LastfmSongSearch.class
 com/sismics/music/core/dao/dbi/criteria/TrackCriteria.class
 com/sismics/music/core/dao/dbi/mapper/AlbumMapper.class
 com/sismics/music/core/listener/sync/DeadEventListener.class
@@ -74,6 +76,7 @@ com/sismics/util/MessageUtil.class
 com/sismics/music/core/model/dbi/Config.class
 com/sismics/music/core/util/ImageUtil.class
 com/sismics/music/core/event/async/DirectoryCreatedAsyncEvent.class
+com/sismics/music/core/service/spotify/SpotifyAuth.class
 com/sismics/music/core/model/dbi/User.class
 com/sismics/util/mime/MimeTypeUtil.class
 com/sismics/music/core/listener/async/PlayCompletedAsyncListener.class
@@ -112,11 +115,13 @@ com/sismics/music/core/service/player/PlayerService.class
 com/sismics/music/core/service/transcoder/TranscoderService.class
 com/sismics/music/core/dao/dbi/mapper/PlayerMapper.class
 com/sismics/music/core/listener/async/CollectionReindexAsyncListener.class
+com/sismics/music/core/service/lastfm/LastFMRecommendation.class
 com/sismics/music/core/util/TransactionUtil.class
 com/sismics/music/core/listener/async/LastFmUpdateLovedTrackAsyncListener.class
 com/sismics/music/core/service/player/PlayerStatus.class
 com/sismics/music/core/util/ConfigUtil.class
 com/sismics/util/dbi/filter/FilterColumn.class
+com/sismics/music/core/service/spotify/SpotifyRecommendations.class
 com/sismics/music/core/dao/dbi/LocaleDao.class
 com/sismics/util/dbi/DbOpenHelper.class
 com/sismics/music/core/service/collection/CollectionWatchService$2.class
