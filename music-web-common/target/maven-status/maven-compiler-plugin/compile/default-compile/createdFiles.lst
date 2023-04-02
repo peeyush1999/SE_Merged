@@ -1,0 +1,12 @@
+com/sismics/rest/FormDataUtil.class
+com/sismics/atmosphere/interceptor/DbiTransactionInterceptor.class
+com/sismics/security/AnonymousPrincipal.class
+com/sismics/rest/util/Validation.class
+com/sismics/rest/exception/ForbiddenClientException.class
+com/sismics/util/filter/RequestContextFilter.class
+com/sismics/rest/exception/ClientException.class
+com/sismics/security/IPrincipal.class
+com/sismics/util/db/DbUtil.class
+com/sismics/security/UserPrincipal.class
+com/sismics/util/filter/TokenBasedSecurityFilter.class
+com/sismics/rest/exception/ServerException.class
