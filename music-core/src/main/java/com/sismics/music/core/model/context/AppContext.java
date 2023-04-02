@@ -36,6 +36,10 @@ import org.json.JSONException;
  * Global application context.
  *
  * @author jtremeaux
+/**
+ * Global application context.
+ *
+ * @author jtremeaux 
  */
 public class AppContext {
     /**
@@ -48,6 +52,7 @@ public class AppContext {
      */
     private EventBus eventBus;
 
+    
     /**
      * Generic asynchronous event bus.
      */
@@ -68,6 +73,7 @@ public class AppContext {
      */
     private CollectionService collectionService;
 
+    
     /**
      * Collection watch service.
      */
@@ -78,6 +84,7 @@ public class AppContext {
      */
     private ImportAudioService importAudioService;
 
+    
     /**
      * Album art service.
      */
@@ -119,6 +126,9 @@ public class AppContext {
      * Private constructor.
      * @throws IOException
      * @throws JSONException
+    
+    /**
+     * Private constructor.
      */
     private AppContext() {
         resetEventBus();
@@ -181,7 +191,6 @@ public class AppContext {
         }
         return instance;
     }
-
     /**
      * Creates a new asynchronous event bus.
      * 
@@ -216,7 +225,6 @@ public class AppContext {
     public CollectionService getCollectionService() {
         return collectionService;
     }
-
     /**
      * Getter of collectionWatchService.
      *

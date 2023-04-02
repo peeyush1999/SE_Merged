@@ -34,6 +34,12 @@ angular.module('music').controller('MusicArtists', function($scope, $stateParams
           $scope.total = data.total;
           $scope.loaded = true;
           $scope.loading = false;
+          console.log("Page Opened");
+          setTimeout(function() {
+            filterArtist();
+            //your code to be executed after 1 second
+          }, 100);
+
         });
   };
 

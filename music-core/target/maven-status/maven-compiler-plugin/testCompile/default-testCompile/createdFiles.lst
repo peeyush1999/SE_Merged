@@ -1,0 +1,12 @@
+com/sismics/music/BaseTransactionalTest.class
+com/sismics/util/TestLyricUtil.class
+com/sismics/music/core/util/TestDirectoryNameParser.class
+com/sismics/util/TestJaudioTagger.class
+com/sismics/music/TestJdbi.class
+com/sismics/music/core/util/TestImageUtil.class
+com/sismics/music/core/service/collection/TestAlbumArtImporter.class
+com/sismics/music/core/service/importaudio/TestImportAudioService.class
+com/sismics/util/TestResourceUtil.class
+com/sismics/util/TestDateUtil.class
+com/sismics/util/TestNetworkUtil.class
+com/sismics/music/core/dao/dbi/TestDbi.class

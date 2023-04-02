@@ -9,9 +9,9 @@
 
       <div class="form-group">
         <select class="form-control" ng-model="order">
-          <option value="alpha">Alphabetical</option>
-          <option value="latest">Latest first</option>
-          <option value="playcount">Play count</option>
+          <option value="alpha" >Alphabetical</option>
+          <option value="latest" >Latest first</option>
+          <option value="playcount" >Play count</option>
         </select>
       </div>
     </form>
@@ -30,10 +30,10 @@
         <div class="caption">
           <div class="caption-container">
             <div>
-              <a class="text-muted" bo-href="'#/artist/' + album.artist.id" bo-text="album.artist.name"></a>
+              <a class="text-muted albumName" bo-href="'#/artist/' + album.artist.id" bo-text="album.artist.name"></a>
             </div>
             <div>
-              <a bo-href="'#/album/' + album.id" bo-text="album.name"></a>
+              <a bo-href="'#/album/' + album.id" bo-text="album.name" class="albumArtist"></a>
             </div>
           </div>
         </div>
@@ -50,5 +50,7 @@
 
 <div class="big-loader-container row" ng-show="!loaded">
   <div class="big-loader">
+    
   </div>
 </div>
+

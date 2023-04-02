@@ -5,6 +5,6 @@
     <input placeholder="Search in playlists" title="Search in playlists" type="text" class="form-control" ng-init="playlistSearch = ''" ng-model="playlistSearch" />
   </li>
   <li bindonce ng-repeat="playlist in $root.playlists | filter: { name: playlistSearch }">
-    <a href ng-click="addToPlaylist(playlist, tracks)" bo-html="'Add to <b>' + playlist.name + '</b>'"></a>
+    <a href ng-click="addToPlaylist(playlist, tracks)" bo-html="'Add to <b>' + playlist.name + '</b>'" class="newPlayList"></a>
   </li>
 </ul>

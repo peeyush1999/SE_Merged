@@ -7,6 +7,7 @@ angular.module('music').controller('Album', function($scope, $state, $stateParam
   // Load album
   Restangular.one('album', $stateParams.id).get().then(function(data) {
     $scope.album = data;
+    
   });
 
   // Play a single track

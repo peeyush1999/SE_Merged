@@ -11,7 +11,7 @@
                 <label class="sr-only" for="inputUsername">Username</label>
                 <input class="form-control" name="username" type="text" required id="inputUsername"
                     placeholder="Username" ng-model="user.username" />
-                <div class="" errortext" ng-show="regform.username.$dirty && regform.username.$invalid">
+                <div class="errortext" ng-show="regform.username.$dirty && regform.username.$invalid">
                     <span ng-show="regform.username.$error.required">Username Required</span>
                     <!--other checkings can be provided  -->
                 </div>
@@ -21,7 +21,7 @@
                 <label class="sr-only" for="inputEmail">Email ID</label>
                 <input class="form-control" name="email" type="email" required id="inputEmail" placeholder="Email ID"
                     ng-model="user.email" />
-                <div class="" errortext" ng-show="regform.email.$dirty && regform.email.$invalid">
+                <div class="errortext" ng-show="regform.email.$dirty && regform.email.$invalid">
                     <span ng-show="regform.email.$error.required">Email Required</span>
                     <span ng-show="regform.email.$error.email">Invalid Email ID</span>
                     <!--other checkings can be provided  -->
@@ -33,7 +33,7 @@
                 <input class="form-control" name="password" type="password" required ng-minlength="8" ng-maxlength="50"
                     ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,50}$/"
                     id="inputPassword" placeholder="Password" ng-model="user.password" />
-                <div class="" errortext" ng-show="regform.password.$dirty && regform.password.$invalid">
+                <div class="errortext" ng-show="regform.password.$dirty && regform.password.$invalid">
                     <span ng-show="regform.password.$error.required">Password Required</span>
                     <span ng-show="regform.password.$error.minlength">Password should be atleast 8 characters
                         long</span>
@@ -50,7 +50,7 @@
                 <label class="sr-only" for="inputPasswordComfirm">Confirm Password</label>
                 <input class="form-control" name="passwordconfirm" type="password" required id="inputPasswordConfirm"
                     placeholder="Confirm Password" ng-model="user.passwordconfirm" />
-                <div class="" errortext"
+                <div class="errortext"
                     ng-show="regform.passwordconfirm.$dirty && regform.passwordconfirm.$invalid || regform.passwordconfirm.$dirty && user.passwordconfirm != user.password">
                     <span ng-show="regform.passwordconfirm.$error.required">Confirm Password Required</span>
                     <span

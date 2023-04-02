@@ -15,6 +15,10 @@ angular.module('music').directive('playlistDropdown', function() {
       // Create a new named playlist
       $scope.createPlaylist = function(tracks) {
         NamedPlaylist.createPlaylist(tracks);
+
+        
+
+
       };
 
       // Add to playlist

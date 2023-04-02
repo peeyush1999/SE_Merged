@@ -15,16 +15,17 @@
     <form name="tagForm">
       <table class="table" ng-show="files.length > 0">
         <tr>
-          <th style="width: 10%;"><span class="btn-link" ng-click="guessOrder()">#</span></th>
-          <th style="width: 20%;">Album artist</th>
-          <th style="width: 20%;">Album</th>
-          <th style="width: 20%;">Artist</th>
-          <th style="width: 20%;">Title</th>
-          <th style="width: 5%;"></th>
-          <th style="width: 5%;"></th>
+          <th style="width: 5%;"><span class="btn-link" ng-click="guessOrder()">#</span></th>
+          <th style="width: 15%;">Album artist</th>
+          <th style="width: 15%;">Album</th>
+          <th style="width: 15%;">Artist</th>
+          <th style="width: 15%;">Title</th>
+          <th style="width: 15%;">Visibility</th>
+          <th style="width: 10%;"></th>
+          <th style="width: 10%;"></th>
         </tr>
         <tr ng-repeat-start="file in files">
-          <td colspan="7">{{ file.file }}</td>
+          <td colspan="8" id="fileName">{{ file.file }}</td>
         </tr>
         <tr ng-repeat-end>
           <td>
@@ -35,7 +36,7 @@
           <td>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Album artist" ng-model="file.albumArtist"
-                     typeahead="artist for artist in artists | filter:$viewValue | limitTo: 8" />
+                     typeahead="artist for artist in artists | filter:$viewValue | limitTo: 8" id = "albumArtist"/>
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" ng-click="copyMetadata('albumArtist', file)" ng-if="$first">
                   <span class="glyphicon glyphicon-share-alt"></span>
@@ -46,7 +47,7 @@
           <td>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Album" ng-model="file.album"
-                     typeahead="album for album in albums | filter:$viewValue | limitTo: 8" />
+                     typeahead="album for album in albums | filter:$viewValue | limitTo: 8" id="album"/>
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" ng-click="copyMetadata('album', file)" ng-if="$first">
                   <span class="glyphicon glyphicon-share-alt"></span>
@@ -57,7 +58,7 @@
           <td>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Artist" ng-model="file.artist"
-                     typeahead="artist for artist in artists | filter:$viewValue | limitTo: 8" />
+                     typeahead="artist for artist in artists | filter:$viewValue | limitTo: 8" id="artist"/>
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" ng-click="copyMetadata('artist', file)" ng-if="$first">
                   <span class="glyphicon glyphicon-share-alt"></span>
@@ -65,14 +66,21 @@
               </span>
             </div>
           </td>
+
           <td>
-            <input type="text" class="form-control" placeholder="Title" ng-model="file.title" />
+            <input type="text" class="form-control" placeholder="Title" ng-model="file.title" id="title"/>
+          </td>
+          <td>
+              <input type="text" class="form-control" placeholder="Public" 
+                      id="visibility"/>
+          
           </td>
           <td>
             <button class="btn btn-default" ng-click="moveFile(file)" ng-disabled="isLoading">
-              <span class="glyphicon glyphicon-ok"></span>
+              <span class="glyphicon glyphicon-ok" onclick="addSong()"></span>
             </button>
           </td>
+          
           <td>
             <button class="btn btn-default" ng-click="deleteFile(file)" ng-disabled="isLoading">
               <span class="glyphicon glyphicon-remove"></span>

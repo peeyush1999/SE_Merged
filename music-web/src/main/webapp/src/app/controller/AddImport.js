@@ -23,9 +23,14 @@ angular.module('music').controller('AddImport', function($scope, Restangular, $d
   // Move an imported file to the collection
   $scope.moveFile = function(file) {
     $scope.isLoading = true;
+    
+    
+
     Restangular.one('import').post('', file).then(function() {
       $scope.files.splice($scope.files.indexOf(file), 1);
       $scope.isLoading = false;
+
+      
     }, function(data) {
       $dialog.messageBox('Import error', data.data.message, [
         { result: 'ok', label: 'OK', cssClass: 'btn-primary' }

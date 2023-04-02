@@ -26,6 +26,21 @@ public class PlaylistCriteria {
      */
     private String userId;
 
+    private String visibility;
+    //getter method visibility
+    public String getVisibility() {
+        return visibility;
+    }
+    //setter method visibility
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+    
+
+
+
+
+
     public String getId() {
         return this.id;
     }

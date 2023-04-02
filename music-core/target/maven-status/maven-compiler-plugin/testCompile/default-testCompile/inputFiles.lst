@@ -1,0 +1,12 @@
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/core/service/collection/TestAlbumArtImporter.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/core/util/TestImageUtil.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/util/TestJaudioTagger.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/TestJdbi.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/core/dao/dbi/TestDbi.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/util/TestResourceUtil.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/core/service/importaudio/TestImportAudioService.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/BaseTransactionalTest.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/util/TestDateUtil.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/util/TestLyricUtil.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/music/core/util/TestDirectoryNameParser.java
+/home/peeyushsahu/Documents/GitHub/IIITHSem4/SE/Project2/SE_15/music-core/src/test/java/com/sismics/util/TestNetworkUtil.java

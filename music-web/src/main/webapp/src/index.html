@@ -44,6 +44,8 @@
   <script src="app/controller/App.js" type="text/javascript"></script>
   <script src="app/controller/Login.js" type="text/javascript"></script>
   <script src="app/controller/Register.js" type="text/javascript"></script>
+  <script src="app/controller/Myscript.js" type="text/javascript"></script>
+  <script src="app/controller/Cookie.js" type="text/javascript"></script>
   <script src="app/controller/Recommendations.js" type="text/javascript"></script>
   <script src="app/controller/LastFmSearch.js" type="text/javascript"></script>
   <script src="app/controller/SpotifySearch.js" type="text/javascript"></script>
@@ -86,6 +88,47 @@
   <script src="app/filter/Filename.js" type="text/javascript"></script>
   <script src="app/filter/Nl2br.js" type="text/javascript"></script>
   <!-- endref -->
+<style>
+  /* The Modal (background) */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content1 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close1 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
 </head>
 
 <body>
@@ -121,7 +164,7 @@
 
         <ul class="nav navbar-nav navbar-right" ng-show="!userInfo.anonymous">
           <li>
-            <a href="#/settings/account" title="Logged in as {{ userInfo.username }}">{{ userInfo.username }}</a>
+            <a href="#/settings/account" title="Logged in as {{ userInfo.username }}" id="username">{{ userInfo.username }}</a>
           </li>
           <li class="dropdown" dropdown ng-class="{active: $uiRoute}" ui-route="/settings.*">
             <a href="#" class="dropdown-toggle" dropdown-toggle><span class="glyphicon glyphicon-cog"></span> <span
@@ -165,6 +208,35 @@
     </div>
   </div>
 
+  <script>
+
+
+const interval = setInterval(function() {
+   // method to be executed;
+   filterSong();
+      filterArtist();
+      filterAlbum();
+      filterPlayList();
+      filterplaylistMode();
+  }, 500);
+
+  const interval2 = setInterval(function() {
+   // method to be executed;
+   dropFilter();
+  }, 100);
+
+  // clearInterval(interval); 
+   
+    // setTimeout(function() {
+    //   filterSong();
+    //   filterArtist();
+    //   filterAlbum();
+    //   filterPlayList();
+    //   filterplaylistMode();
+    //         //your code to be executed after 3 second
+    //       }, 3000);
+    
+      </script>
 </body>
 
 </html>

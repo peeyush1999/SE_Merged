@@ -39,7 +39,6 @@ angular.module('music').controller('MusicAlbums', function($scope, $stateParams,
       $scope.albums = [];
       $scope.loaded = false;
     }
-
     if ($scope.total == $scope.albums.length && $scope.loaded || $scope.loading) {
       return;
     }
@@ -57,7 +56,15 @@ angular.module('music').controller('MusicAlbums', function($scope, $stateParams,
           $scope.loaded = true;
           $scope.loading = false;
           Album.setCache($scope.albums);
+          console.log("Page Opened");
+        
+        setTimeout(function() {
+          filterAlbum();
+          //your code to be executed after 1 second
+        }, 100);
+          
         });
+        
   };
 
   // Debounced version

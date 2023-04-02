@@ -120,8 +120,8 @@ public class PlaylistDao extends BaseDao<PlaylistDto, PlaylistCriteria> {
      */
     public PlaylistDto getDefaultPlaylistByUserId(String userId) {
         return findFirstByCriteria(new PlaylistCriteria()
-                .setDefaultPlaylist(true)
-                .setUserId(userId));
+                .setDefaultPlaylist(true));
+                // .setUserId(userId));
     }
 
     /**

@@ -7,6 +7,8 @@ angular.module('music').controller('Artist', function($scope, $stateParams, Rest
   // Get artist details
   Restangular.one('artist', $stateParams.id).get().then(function(data) {
     $scope.artist = data;
+
+   
   });
 
   // Play a single track
@@ -51,6 +53,12 @@ angular.module('music').controller('Artist', function($scope, $stateParams, Rest
   $scope.playAlbum = function(album) {
     Restangular.one('album', album.id).get().then(function(data) {
       Playlist.removeAndPlayAll(_.pluck(data.tracks, 'id'));
+      setTimeout(function() {
+        filterSong();
+        //your code to be executed after 1 second
+      }, 1);
+      
+
     });
   };
 });

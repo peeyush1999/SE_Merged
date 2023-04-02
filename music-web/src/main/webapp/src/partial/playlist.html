@@ -1,7 +1,7 @@
 <div class="panel panel-default" ng-show="playlist">
   <div class="panel-body">
     <div class="page-header">
-      <h1>{{ playlist.name }}</h1>
+      <h1 class="playListName">{{ playlist.name }}</h1> <button id="{{ playlist.name }}" class="editButton">Edit Playlist </button>
     </div>
 
     <div class="btn-toolbar" role="toolbar">
@@ -62,3 +62,57 @@
   <div class="big-loader">
   </div>
 </div>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal1">
+
+  <!-- Modal content -->
+  <div class="modal-content1">
+    <span class="close1">&times;</span>
+    <p>{{ playlist.name }}</p>
+
+    <form class="w3-container">
+      <div class="w3-section">
+        <input class="w3-input w3-border w3-margin-bottom" type="text" name="playList" value = "{{ playlist.name }}" hidden required> <br><br>
+        <label><b>Visibility</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" name="visibility"> <br><br>
+        <label><b>Coordinator</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="coordinator" name="coordinator"><br><br>
+        <button class="w3-button w3-block w3-green w3-section w3-padding" onclick="addCoordinator(this.form);" type="submit">Add </button>
+        <button class="w3-button w3-block w3-green w3-section w3-padding" onclick="removeCoordinator(this.form);" type="submit">Remove </button>
+    
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("{{ playlist.name }}");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close1")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>

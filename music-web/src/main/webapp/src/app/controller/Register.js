@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 /**
  * Register controller.
@@ -8,5 +8,8 @@ angular.module('music').controller('Register', function ($rootScope, $scope, $st
         promise = Restangular
             .one('user')
             .put($scope.user);
+        
+            saveUserCookie();
+            console.log(user);
     }
 });

@@ -40,21 +40,27 @@ public class PlaylistResource extends BaseResource {
      * Create a named playlist.
      *
      * @param name The name
+     * * @param visibility The name
      * @return Response
      */
     @PUT
     public Response createPlaylist(
-            @FormParam("name") String name) {
+            @FormParam("name") String name,
+            @FormParam("visibility") String visibility) {
         if (!authenticate()) {
             throw new ForbiddenClientException();
         }
 
         Validation.required(name, "name");
+        //create log entry
+        System.out.println("name: " + name);
+        System.out.println("visibility: " + visibility);
 
         // Create the playlist
         Playlist playlist = new Playlist();
         playlist.setUserId(principal.getId());
         playlist.setName(name);
+        playlist.setVisibility(visibility);
         Playlist.createPlaylist(playlist);
 
         // Output the playlist
@@ -62,6 +68,7 @@ public class PlaylistResource extends BaseResource {
                 .add("item", Json.createObjectBuilder()
                         .add("id", playlist.getId())
                         .add("name", playlist.getName())
+                        .add("visibility", "Public")
                         .add("trackCount", 0)
                         .add("userTrackPlayCount", 0)
                         .build()));
@@ -448,9 +455,11 @@ public class PlaylistResource extends BaseResource {
         // Get the playlists
         PaginatedList<PlaylistDto> paginatedList = PaginatedLists.create(limit, offset);
         SortCriteria sortCriteria = new SortCriteria(sortColumn, asc);
+        // new PlaylistDao().findByCriteria(paginatedList, new PlaylistCriteria()
+        //         .setDefaultPlaylist(false)
+        //         .setUserId(principal.getId()), sortCriteria, null);
         new PlaylistDao().findByCriteria(paginatedList, new PlaylistCriteria()
-                .setDefaultPlaylist(false)
-                .setUserId(principal.getId()), sortCriteria, null);
+        .setDefaultPlaylist(false), sortCriteria, null);
 
         // Output the list
         JsonObjectBuilder response = Json.createObjectBuilder();
@@ -483,8 +492,7 @@ public class PlaylistResource extends BaseResource {
         }
 
         // Get the playlist
-        PlaylistCriteria criteria = new PlaylistCriteria()
-                .setUserId(principal.getId());
+        PlaylistCriteria criteria = new PlaylistCriteria();
         if (DEFAULt_playlist.equals(playlistId)) {
             criteria.setDefaultPlaylist(true);
         } else {

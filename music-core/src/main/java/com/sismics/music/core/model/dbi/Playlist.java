@@ -27,6 +27,18 @@ public class Playlist {
      */
     private String name;
 
+    String visibility;
+
+    // create visibility setter
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+    // create visibility getter
+
+    public String getVisibility() {
+        return visibility;
+    }
+
     public Playlist() {
     }
 
@@ -37,6 +49,7 @@ public class Playlist {
     public Playlist(String id, String userId) {
         this.id = id;
         this.userId = userId;
+        this.visibility = "public";
     }
 
     /**
@@ -117,6 +130,7 @@ public class Playlist {
                 .add("id", id)
                 .add("userId", userId)
                 .add("name", name)
+                .add("visibility", visibility)
                 .toString();
     }
 }

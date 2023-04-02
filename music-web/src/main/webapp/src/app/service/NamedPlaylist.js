@@ -51,6 +51,9 @@ angular.module('music').factory('NamedPlaylist', function($rootScope, $modal, Re
           'ngInject';
           $scope.ok = function (name) {
             $modalInstance.close(name);
+
+
+            addPlayList();
           };
 
           $scope.cancel = function () {
